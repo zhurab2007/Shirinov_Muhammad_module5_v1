@@ -66,5 +66,7 @@
 ### ``18. Behavior Parameterization nima?``
 
 ### ``19.Declarative va Imperative programming nima?``
+** **
 
 ### ``20. Stream nima? Stream va Collectionlarning farqi nimada?``
+** **

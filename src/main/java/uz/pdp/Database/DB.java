@@ -6,7 +6,7 @@ import uz.pdp.Entity.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface DB {
-    List<Book> books = new ArrayList<>();
-    List<User> users = new ArrayList<>();
+public class DB {
+    public static final List<Book> books = new ArrayList<>();
+    public static final List<User> users = new ArrayList<>();
 }

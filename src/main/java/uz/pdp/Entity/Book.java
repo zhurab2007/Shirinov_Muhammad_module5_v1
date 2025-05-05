@@ -9,10 +9,9 @@ import java.util.UUID;
 @Setter
 @ToString
 public class Book {
-    private UUID id;
     private String name;
-    private Integer price;
-    private Integer quantity;
-    private String bookPhoto;
-    private String bookDocument;
+    private int price;
+    private int quantity;
+    private String imageFileId;
+    private String documentFileId;
 }

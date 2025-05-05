@@ -2,8 +2,6 @@ package uz;
 
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.UpdatesListener;
-import uz.pdp.Database.DB;
-import uz.pdp.Entity.User;
 import uz.pdp.Service.UpdateHandler;
 import java.util.ResourceBundle;
 import java.util.concurrent.CompletableFuture;
@@ -17,7 +15,6 @@ public class App {
     private static final ThreadLocal<UpdateHandler> threadLocal = ThreadLocal.withInitial(UpdateHandler::new);
 
     public static void main( String[] args ) {
-//        admin();
 
         TelegramBot bot = new TelegramBot(resourceBundle.getString("bot.token"));
 
@@ -32,14 +29,4 @@ public class App {
 
     }
 
-    private static synchronized void admin() {
-        if (DB.users.isEmpty()) {
-            DB.users.add(
-                    User.builder()
-                    .chatId(Long.valueOf(resourceBundle.getString("bot.adminId")))
-                    .login("admin")
-                    .password("admin")
-                    .build());
-        }
-    }
 }

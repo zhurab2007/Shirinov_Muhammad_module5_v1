@@ -1,8 +1,8 @@
 package uz.pdp.Entity;
-import com.pengrad.telegrambot.model.ChatShared;
+
 import lombok.*;
 
-import java.util.UUID;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -11,11 +11,36 @@ import java.util.UUID;
 @Setter
 @ToString
 public class User {
-    private UUID id;
-    private String login;
-    private String password;
+    private Long chatId;
+    private String username;
+    private List<Order> orders;
 
-    public static ChatShared builder() {
-        return null;
+    public static UserBuilder builder() {
+        return new UserBuilder();
+    }
+
+    public static class UserBuilder {
+        private Long chatId;
+        private String username;
+        private List<Order> orders;
+
+        public UserBuilder chatId(Long chatId) {
+            this.chatId = chatId;
+            return this;
+        }
+
+        public UserBuilder username(String username) {
+            this.username = username;
+            return this;
+        }
+
+        public UserBuilder orders(List<Order> orders) {
+            this.orders = orders;
+            return this;
+        }
+
+        public User build() {
+            return new User(chatId, username, orders);
+        }
     }
 }
