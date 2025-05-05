@@ -28,5 +28,4 @@ public class App {
         }, Throwable::printStackTrace);
 
     }
-
 }

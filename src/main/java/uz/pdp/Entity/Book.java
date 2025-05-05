@@ -15,3 +15,4 @@ public class Book {
     private String imageFileId;
     private String documentFileId;
 }
+
